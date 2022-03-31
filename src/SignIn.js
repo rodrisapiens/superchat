@@ -13,7 +13,7 @@ function SignIn() {
         auth.signInWithPopup(provider);
     }
   return (
-    <button onClick={signInWithGoogle} className="signInBtn">Sing In with google</button>
+    <button onClick={signInWithGoogle} className="signInBtn">Sign In with google</button>
   )
 }
 
