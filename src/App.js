@@ -2,6 +2,7 @@ import './App.css';
 import ChatRoom from './ChatRoom';
 import firebase from 'firebase/compat/app';
 import SignIn from './SignIn';
+import SignOut from './SignOut';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore'
 import {useAuthState} from 'react-firebase-hooks/auth';
@@ -29,9 +30,10 @@ function App() {
   const [user]=useAuthState(auth)
   return (
     <div className="App">
-      {/* <header className="App-header">
-        
-      </header> */}
+       <header>
+        <h1>⚛️🔥💬</h1>
+        <SignOut />
+      </header>
       <section>
         {user?<ChatRoom/>:<SignIn/>}
       </section>
