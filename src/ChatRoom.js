@@ -15,6 +15,10 @@ function ChatRoom() {
     const query = messagesRef.orderBy('createdAt');
     const [messages] = useCollectionData(query, { idField: 'id' });
     const [formValue,setFormValue]=useState('');
+    useEffect(() => {
+        dummy.current.scrollIntoView({behavior:'smooth'});
+    }, [messages])
+    
     const sendMessage = async(e) => {
         e.preventDefault();
         const {uid,photoURL} = auth.currentUser;
@@ -26,7 +30,6 @@ function ChatRoom() {
             photoURL
         });
         setFormValue('');
-        dummy.current.scrollIntoView({behavior:'smooth'});
     }
     return (
         <div className='chatRoom'>
